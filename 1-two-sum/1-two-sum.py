@@ -4,7 +4,6 @@ class Solution:
             for j in range(i+1,len(nums)):
                 if(target-nums[i] == nums[j]):
                     return[i,j]
-        return []
             
                     
                 
