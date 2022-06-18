@@ -5,5 +5,4 @@ class Solution:
         ans = []
         for i in range(m):
             ans.append(original[i*n: i*n + n])
-            print(original[i*n])
         return ans
