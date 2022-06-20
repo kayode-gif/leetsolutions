@@ -2,7 +2,7 @@ class Solution:
     def productExceptSelf(self, nums: List[int]) -> List[int]:
         left = [1]*len(nums)
         right = [1]*len(nums)
-        ans = [0]*len(nums)
+        ans = [1]*len(nums)
         #loop through for left array
         for i in range(1,len(nums)):
             left[i] = nums[i-1]*left[i-1]
