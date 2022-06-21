@@ -5,7 +5,7 @@ class Solution:
         ans = []
         for i in fSort:
             if i in sSort:
-                ans.append(i)     
-                sSort.remove(i)
+                ans.append(i)
+                sSort.remove(i)#remove duplicates 
         return ans
                 
