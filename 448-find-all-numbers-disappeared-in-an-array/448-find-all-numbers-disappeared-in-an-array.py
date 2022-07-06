@@ -1,14 +1,12 @@
 class Solution:
     def findDisappearedNumbers(self, nums: List[int]) -> List[int]:
-        #stores the missing numbers 
-        arrayM = []
-        numSet = set()
-        #loop through if number in set add it
+        diss = []
+        numsSet = set()
         for i in nums:
-            numSet.add(i)
-        #now loop through [1,n] if its not add it into arrayM
+            numsSet.add(i)
         for i in range(1,len(nums)+1):
-            if (i not in numSet):
-                arrayM.append(i)
-        return arrayM
+            if i not in numsSet:
+                diss.append(i)
+        return diss
+            
         
