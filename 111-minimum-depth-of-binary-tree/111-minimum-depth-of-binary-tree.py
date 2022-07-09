@@ -11,7 +11,7 @@ class Solution:
         if root == None:
             return 0
         while queue:
-            length = len(queue)
+            length = len(queue) 
             min_sum +=1
             for neighbours in range(length):
                 node = queue.pop(0)
