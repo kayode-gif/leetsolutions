@@ -9,13 +9,13 @@ class Solution:
         if root == None:
             return 0
         queue = [root]
-        res = 0
+        l_sum = 0
         while queue:
             node = queue.pop(0)
-            if node:
-                if node.left and not node.left.left and not node.left.right:
-                    res += node.left.val
+            if node.left:
+                if not node.left.left and not node.left.right:
+                    l_sum += node.left.val
                 queue.append(node.left)
-                queue.append(node.right)
-                
-        return res
+            if node.right:
+                queue.append(node.right)       
+        return l_sum
