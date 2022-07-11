@@ -12,10 +12,10 @@ class Solution:
         l_sum = 0
         while queue:
             node = queue.pop(0)
-            if node.left:
+            if node.left != None:
                 if not node.left.left and not node.left.right:
                     l_sum += node.left.val
                 queue.append(node.left)
-            if node.right:
+            if node.right != None:
                 queue.append(node.right)       
         return l_sum
