@@ -20,9 +20,9 @@ class Solution:
         stack = [(p,q)]
         while stack:
             nodeP,nodeQ = stack.pop()
-            if nodeP == None and nodeQ == None:
+            if not nodeP and not nodeQ:
                 continue 
-            elif nodeP == None or nodeQ == None:
+            if not nodeP or not nodeQ:
                 return False
             else:
                 if nodeP.val != nodeQ.val:
