@@ -8,6 +8,7 @@ class Solution:
     def minDepth(self, root: Optional[TreeNode]) -> int:
         
         #iterative dfs 
+        
         # if not root:
         #     return 0
         # stack = [(root,1)]
