@@ -6,19 +6,18 @@
 #         self.right = right
 class Solution:
     def minDepth(self, root: Optional[TreeNode]) -> int:
-        queue = [root]
-        min_sum = 0
-        if root == None:
+        if root==None:
             return 0
-        while queue:
-            length = len(queue) 
-            min_sum +=1
-            for neighbours in range(length):
-                node = queue.pop(0)
-                if node.left == None and node.right == None:
-                    return min_sum
-                if node.left != None:
-                    queue.append(node.left)
-                if node.right != None:
-                    queue.append(node.right)
-        return min_sum
+        if root.left==None and root.right==None:
+            return 1
+        
+        global_min=100001       #As max no. of nodes can be 10^5
+        if root.left:
+            global_min=min(self.minDepth(root.left),global_min)
+        if root.right:
+            global_min=min(self.minDepth(root.right),global_min)
+        
+        return global_min+1
+                    
+                
+        
