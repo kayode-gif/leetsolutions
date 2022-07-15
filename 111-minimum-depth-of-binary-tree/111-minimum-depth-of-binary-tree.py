@@ -6,18 +6,16 @@
 #         self.right = right
 class Solution:
     def minDepth(self, root: Optional[TreeNode]) -> int:
-        if root==None:
+        if not root:
             return 0
-        if root.left==None and root.right==None:
-            return 1
-        
-        global_min=100001       #As max no. of nodes can be 10^5
-        if root.left:
-            global_min=min(self.minDepth(root.left),global_min)
-        if root.right:
-            global_min=min(self.minDepth(root.right),global_min)
-        
-        return global_min+1
-                    
-                
-        
+        stack = [(root,1)]
+        curr_depth = float('inf')
+        while stack:
+            node,depth = stack.pop()
+            if not node.right and not node.left:
+                curr_depth = min(curr_depth,depth)
+            if node.right:
+                stack.append((node.right,depth+1))
+            if node.left:
+                stack.append((node.left,depth+1))
+        return curr_depth
