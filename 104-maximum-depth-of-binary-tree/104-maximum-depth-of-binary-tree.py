@@ -6,17 +6,15 @@
 #         self.right = right
 class Solution:
     def maxDepth(self, root: Optional[TreeNode]) -> int:
-        if root == None:
+        #recursive dfs
+        if not root:
             return 0
-        queue = [root]
-        max_sum = 0
-        while queue:
-            length = len(queue)
-            for neighbours in range(length):
-                node = queue.pop(0)
-                if node.left != None:
-                    queue.append(node.left)
-                if node.right != None:
-                    queue.append(node.right)
-            max_sum +=1
-        return max_sum
+        if not root.right and not root.left:
+            return 1
+        if not root.right and root.left:
+            return 1 + self.maxDepth(root.left)
+        if not root.left and root.right:
+            return 1 + self.maxDepth(root.right)
+        return 1 + max(self.maxDepth(root.left),self.maxDepth(root.right))
+        
+        
