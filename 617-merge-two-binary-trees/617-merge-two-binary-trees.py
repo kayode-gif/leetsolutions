@@ -11,8 +11,8 @@ class Solution:
         if root2 == None:
             return root1
         #increment value 
-        root2.val += root1.val
-        root2.left = self.mergeTrees(root1.left,root2.left)
-        root2.right = self.mergeTrees(root1.right,root2.right)
-        return root2
+        root1.val += root2.val
+        root1.left = self.mergeTrees(root1.left,root2.left)
+        root1.right = self.mergeTrees(root1.right,root2.right)
+        return root1
         
