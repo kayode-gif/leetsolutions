@@ -13,5 +13,4 @@ class Solution:
             elif p.val < root.val and q.val < root.val:
                 root = root.left
             else:
-                
                 return root
