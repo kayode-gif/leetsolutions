@@ -6,8 +6,14 @@
 #         self.right = right
 class Solution:
     def inorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
+        #recursion 
+        if not root:
+            return []
+        return self.inorderTraversal(root.left) + [root.val] + self.inorderTraversal(root.right)
+    
+        #iterative 
         stack = [root]
-        result = []
+        ans = list()
         while stack:
             node = stack.pop()
             if node:
@@ -17,6 +23,6 @@ class Solution:
             else:
                 if stack:
                     node = stack.pop()
-                    result.append(node.val)
-        return result
-        
+                    ans.append(node.val)
+        return ans
+                
