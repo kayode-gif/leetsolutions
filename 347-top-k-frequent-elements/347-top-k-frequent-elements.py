@@ -15,11 +15,10 @@ class Solution:
         # # return list of top elements
         # return result[0:k]
         
+        #heap solution
         if not nums:
             return []
         if len(nums) == k:
-            return nums
-        #frequency hashMap
-        count = Counter(nums)
-        return heapq.nlargest(k,count.keys(), key = count.get)
-        
+            return nums 
+        frequency = Counter(nums) #frequency hashmap
+        return heapq.nlargest(k,frequency.keys(), key = frequency.get)
