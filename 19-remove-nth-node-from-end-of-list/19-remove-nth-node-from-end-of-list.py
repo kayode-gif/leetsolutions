@@ -10,7 +10,7 @@ class Solution:
         left = dummy
         # loop to place right pointer at n gap 
         right = head
-        while n > 0 and right != None:
+        while n > 0:
             right = right.next
             n = n -1 
         # traverse list to when right and left is at desired n gap 
